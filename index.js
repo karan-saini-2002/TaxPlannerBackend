@@ -9,6 +9,9 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors";
 
+app.use(cors({
+  origin: 'https://ubiquitous-empanada-5a8664.netlify.app/'
+}));
 dotenv.config();
 
 mongoose
