@@ -9,10 +9,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors";
 
-app.use(cors({
-  origin: 'https://ubiquitous-empanada-5a8664.netlify.app/'
-}));
-dotenv.config();
+
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -26,6 +23,11 @@ mongoose
 const __dirname = path.resolve();
 
 const app = express();
+
+app.use(cors({
+  origin: 'https://ubiquitous-empanada-5a8664.netlify.app/'
+}));
+dotenv.config();
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
