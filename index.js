@@ -12,7 +12,7 @@ import cors from "cors";
 dotenv.config();
 
 mongoose
-  .connect("process.env.MONGO_URI")
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -34,7 +34,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(cors());
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
 
